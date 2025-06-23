@@ -106,3 +106,62 @@ nav a {
   display: block;
   opacity: 1;
 }
+/* MUSIC TAB STYLES */
+#music {
+  padding: 2rem;
+  font-family: 'Lekton', sans-serif;
+  animation: fadeIn 0.6s ease-in-out;
+  text-align: center;
+}
+
+#music h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+#music h3 {
+  margin-top: 2rem;
+  color: #ccc;
+}
+
+#music ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem 0;
+}
+
+#music ul li {
+  margin: 0.5rem 0;
+}
+
+#music ul li a {
+  text-decoration: none;
+  color: #66ccff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+#music ul li a:hover {
+  color: #fff;
+}
+
+#music iframe {
+  margin: 1rem auto;
+  max-width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 12px;
+}
+
+/* Optional: Fade-in animation for tab switch */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
