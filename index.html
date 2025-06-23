@@ -96,8 +96,18 @@
     function switchTab(tabId) {
       const tabs = document.querySelectorAll('.tab');
       tabs.forEach(tab => tab.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-    }
+       tab.style.opacity = 0;
+      setTimeout(() => {
+        tab.style.display = 'none';
+      }, 600); // matches transition time
+    });
+
+    const selectedTab = document.getElementById(tabId);
+    selectedTab.style.display = 'block';
+    setTimeout(() => {
+      selectedTab.classList.add('active');
+    }, 10); // triggers CSS transition
+  }
   </script>
 </body>
 </html>
