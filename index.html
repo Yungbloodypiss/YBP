@@ -92,24 +92,13 @@
     <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/the-amazing-chronicles-of-sigmas-vol-2/1816580377"></iframe>
   </div>
 
-<script>
-  function switchTab(tabId) {
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(tab => {
-      tab.classList.remove('active');
-      tab.style.opacity = 0;
-      setTimeout(() => {
-        tab.style.display = 'none';
-      }, 600); // matches transition time
-    });
-
-    const selectedTab = document.getElementById(tabId);
-    selectedTab.style.display = 'block';
-    setTimeout(() => {
-      selectedTab.classList.add('active');
-    }, 10); // triggers CSS transition
-  }
-</script>
+ <script>
+    function switchTab(tabId) {
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
