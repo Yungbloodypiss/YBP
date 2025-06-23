@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: 'Lekton', sans-serif;
+  background-color: #f9f9f9;
+  color: #111;
+}
+nav {
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+nav h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.tab {
+  display: none;
+  padding: 2rem;
+}
+.active {
+  display: block;
+}
+.timeline-horizontal {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 3rem 1rem;
+  justify-content: flex-start;
+  width: max-content;
+  max-width: 100%;
+  margin: 4rem auto 0 auto;
+  transform: scale(1);
+  transform-origin: top center;
+}
+.timeline-horizontal .event {
+  min-width: 200px;
+  border-left: none;
+  padding: 0.5rem;
+  background: #eee;
+  border-radius: 10px;
+  flex-shrink: 0;
+  text-align: center;
+}
+.event h3 {
+  margin: 0.2rem 0;
+}
+.event img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+}
+.progress-container {
+  width: 100%;
+  margin: 2rem 0;
+  position: relative;
+}
+.progress-label {
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+.progress-image {
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+}
+.progress-bar {
+  width: 100%;
+  background: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 20px;
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  background: #000;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+.progress-percent {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
