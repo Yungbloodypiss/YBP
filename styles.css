@@ -176,3 +176,61 @@ nav a {
   opacity: 1;
 }
   }
+
+
+/* Vol. 1 Lyrics tab - circular layout */
+.circle-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 3rem auto;
+}
+
+.circle-btn {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  border: none;
+  background-color: #111;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.circle-btn:nth-child(1) { top: 50%; left: 100%; }
+.circle-btn:nth-child(2) { top: 82%; left: 82%; }
+.circle-btn:nth-child(3) { top: 100%; left: 50%; }
+.circle-btn:nth-child(4) { top: 82%; left: 18%; }
+.circle-btn:nth-child(5) { top: 50%; left: 0%; }
+.circle-btn:nth-child(6) { top: 18%; left: 18%; }
+.circle-btn:nth-child(7) { top: 0%; left: 50%; }
+.circle-btn:nth-child(8) { top: 18%; left: 82%; }
+
+/* Modal popup styles */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 80%;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
