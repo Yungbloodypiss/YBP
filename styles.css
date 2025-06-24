@@ -109,7 +109,7 @@ nav a {
 /* MUSIC TAB STYLES */
 #music {
   padding: 2rem;
-  font-family: 'Lekton', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   animation: fadeIn 0.6s ease-in-out;
   text-align: center;
 }
