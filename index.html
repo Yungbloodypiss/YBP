@@ -6,6 +6,60 @@
   <title>YBP</title>
   <link href="https://fonts.googleapis.com/css2?family=Lekton&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+<style>
+.circle-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 3rem auto;
+}
+.circle-btn {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  border: none;
+  background-color: #111;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+.circle-btn:nth-child(1) { top: 50%; left: 100%; }
+.circle-btn:nth-child(2) { top: 82%; left: 82%; }
+.circle-btn:nth-child(3) { top: 100%; left: 50%; }
+.circle-btn:nth-child(4) { top: 82%; left: 18%; }
+.circle-btn:nth-child(5) { top: 50%; left: 0%; }
+.circle-btn:nth-child(6) { top: 18%; left: 18%; }
+.circle-btn:nth-child(7) { top: 0%; left: 50%; }
+.circle-btn:nth-child(8) { top: 18%; left: 82%; }
+
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 80%;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+</style>
+
 </head>
 <body>
   <nav>
@@ -14,6 +68,7 @@
       <a onclick="switchTab('timeline')">Timeline</a>
       <a onclick="switchTab('progress')">Album Progress</a>
       <a onclick="switchTab('music')">Music</a>
+<a onclick="switchTab('lyrics')">Vol. 1 Lyrics</a>
     </div>
   </nav>
 
@@ -92,13 +147,55 @@
     <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/the-amazing-chronicles-of-sigmas-vol-2/1816580377"></iframe>
   </div>
 
- <script>
+ 
+<div id="lyrics" class="tab">
+  <h2>Vol. 1 Lyrics</h2>
+  <div class="circle-container">
+    <button class="circle-btn" onclick="openModal(1)">HIT IT</button>
+    <button class="circle-btn" onclick="openModal(2)">CCC</button>
+    <button class="circle-btn" onclick="openModal(3)">HAT IN THE CAT</button>
+    <button class="circle-btn" onclick="openModal(4)">HALLOWEEN</button>
+    <button class="circle-btn" onclick="openModal(5)">WANT</button>
+    <button class="circle-btn" onclick="openModal(6)">YEAH YEAH</button>
+    <button class="circle-btn" onclick="openModal(7)">VULTURES</button>
+    <button class="circle-btn" onclick="openModal(8)">PARTNER</button>
+  </div>
+  <div id="modalContainer"></div>
+</div>
+
+
+<script>
     function switchTab(tabId) {
       const tabs = document.querySelectorAll('.tab');
       tabs.forEach(tab => tab.classList.remove('active'));
       document.getElementById(tabId).classList.add('active');
     }
-  </script>
+  
+  function openModal(trackNumber) {
+    const lyrics = {
+      1: "Lyrics for Track 1...",
+      2: "Lyrics for Track 2...",
+      3: "Lyrics for Track 3...",
+      4: "Lyrics for Track 4...",
+      5: "Lyrics for Track 5...",
+      6: "Lyrics for Track 6...",
+      7: "Lyrics for Track 7...",
+      8: "Lyrics for Track 8..."
+    };
+
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.innerHTML = `
+      <div class="modal-content">
+        <span class="close-btn" onclick="this.parentElement.parentElement.remove()">×</span>
+        <h3>Track ${trackNumber} Lyrics</h3>
+        <p>${lyrics[trackNumber]}</p>
+      </div>
+    `;
+    document.getElementById('modalContainer').appendChild(modal);
+  }
+
+</script>
 
 </body>
 </html>
